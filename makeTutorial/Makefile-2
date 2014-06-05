@@ -1,0 +1,16 @@
+all: hello
+
+hello: main.o factorial.o hellow.o
+	g++ main.o factorial.o hellow.o -o hello
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+factorial.o: factorial.cpp
+	g++ -c factorial.cpp
+
+hellow.o: hellow.cpp
+	g++ -c hellow.cpp
+
+clean:
+	rm -rf *o hello

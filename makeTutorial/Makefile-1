@@ -1,0 +1,2 @@
+all:
+	g++ -Wall -W -Werror main.cpp hellow.cpp factorial.cpp -o hello

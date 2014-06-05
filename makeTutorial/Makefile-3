@@ -1,0 +1,21 @@
+# This is a comment. Variable CC signifies the compiler
+CC=g++
+# This is another comment. Variable CFLAGS are compiler options
+CFLAGS=-c -Wall -W -Werror
+
+all: hello
+
+hello: main.o factorial.o hellow.o
+	$(CC) main.o factorial.o hellow.o -o hello
+
+main.o: main.cpp
+	$(CC) $(CFLAGS) main.cpp
+
+factorial.o: factorial.cpp
+	$(CC) $(CFLAGS) factorial.cpp
+
+hellow.o: hellow.cpp
+	$(CC) $(CFLAGS) hellow.cpp
+
+clean:
+	rm -rf *o hello
